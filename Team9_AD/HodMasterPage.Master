@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HodMasterPage.master.cs" Inherits="Team9_AD.HodMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOD</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+    <link rel="stylesheet" href="Clerk_assets/assets/css/Footer-Dark.css">
+     <link rel="stylesheet" href="Clerk_assets/assets/css/Simple-Vertical-Navigation-Menu-v-10.css">
+    <link rel="stylesheet" href="Clerk_assets/assets/css/styles.css">
+     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+  
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+         <nav class="navbar navbar-light navbar-expand-md">
+        <div class="container-fluid"><a class="navbar-brand" href="#" style="font-family:Abel, sans-serif;font-size:40px;"><img src="Clerk_assets/assets/img/LOGO.jpg">LOGIC UNIVERSITY</a>
+            <button type="button"  class="navbar-toggler" data-toggle="collapse" aria-controls="#navcol-1" data-target="#navcol-1" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon" ></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="http://<%=Application["host"]%>/AD_Page/HodPage/HodHomePage.aspx" style="font-size:20px;font-family:Abel, sans-serif;">Home Page</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="http://<%=Application["host"]%>/AD_Page/HodPage/HodViewPage.aspx" style="font-size:20px;font-family:Abel, sans-serif;">View Request</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="http://<%=Application["host"]%>/AD_Page/HodPage/HodChooseRep.aspx" style="font-size:20px;font-family:Abel, sans-serif;">Choose Representative</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#" style="font-size:20px;font-family:Abel, sans-serif;">Choose Delegate</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#" style="font-size:20px;background-color:#edcbcb;font-family:Abel, sans-serif;">Log Out</a></li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+          <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3><strong>Contact Us</strong><br></h3>
+                        <ul>
+                            <li><a href="#">25 Heng Mui Keng Terrace<br></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#">119615</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Users</h3>
+                        <ul>
+                            <li><a href="#">Employees<br></a></li>
+                            <li><a href="#">Department Head<br></a></li>
+                            <li><a href="#">Department Rep<br></a></li>
+                            <li><a href="#">Supervisor<br></a></li>
+                            <li><a href="#">Manager<br></a></li>
+                            <li><a href="#">Clerk<br></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Team Members</h3>
+                        <p>Ayyakkannu&nbsp;Priyasangeetha,&nbsp;Hunasavally&nbsp;Virupaksha&nbsp;Dhanya,&nbsp;<br>Krriti Ravikumar,&nbsp;Padmashri Narendran,&nbsp;Prasanth Raju,&nbsp;Santhosh&nbsp;Manivannan,&nbsp;Shanmugam&nbsp;Manikandan, Subash&nbsp;Machavel
+                            and Sundarababu Surendran<br></p>
+                    </div>
+                </div>
+                <p class="copyright">AD PROJECT - TEAM 9 (SA46)© 2018</p>
+            </div>
+        </footer>
+    </div>
+    </form>
+</body>
+</html>

@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,7 +45,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -68,17 +79,274 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\css\Footer-Dark.css" />
+    <Content Include="assets\css\Login-Form-Dark.css" />
+    <Content Include="assets\css\Navigation-Clean.css" />
+    <Content Include="assets\css\styles.css" />
+    <Content Include="assets\fonts\ionicons.min.css" />
+    <Content Include="assets\fonts\ionicons.svg" />
+    <Content Include="assets\img\image.jpg" />
+    <Content Include="assets\img\LOGO.jpg" />
+    <Content Include="assets\img\pens.jpg" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="Clerk_assets\assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Clerk_assets\assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Clerk_assets\assets\css\Footer-Dark.css" />
+    <Content Include="Clerk_assets\assets\css\Simple-Vertical-Navigation-Menu-v-10.css" />
+    <Content Include="Clerk_assets\assets\css\styles.css" />
+    <Content Include="Clerk_assets\assets\img\image.jpg" />
+    <Content Include="Clerk_assets\assets\img\LOGO.jpg" />
+    <Content Include="Clerk_assets\assets\js\jquery.min.js" />
+    <Content Include="ClerkHome.aspx" />
+    <Content Include="ClerkRequestDetails.aspx" />
+    <Content Include="Disbursemtlist.aspx" />
+    <Content Include="EmployeeHome.aspx" />
+    <Content Include="EmployeePages\EmployeeEdit.aspx" />
+    <Content Include="EmployeePages\EmployeeHome.aspx" />
+    <Content Include="EmployeePages\EmployeeView.aspx" />
+    <Content Include="EmployeePages\MakeRequest.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="HodPage\HodChooseDelegate.aspx" />
+    <Content Include="HodPage\HodChooseRep.aspx" />
+    <Content Include="HodPage\HodHomePage.aspx" />
+    <Content Include="HodPage\HodViewDetails.aspx" />
+    <Content Include="HodPage\HodViewPage.aspx" />
+    <Content Include="HodPage\jquery-ui.css" />
+    <Content Include="HodPage\jquery-ui.js" />
+    <Content Include="LoginPage.aspx" />
+    <Content Include="newInventory.aspx" />
+    <Content Include="ReceviedRequestClerk.aspx" />
+    <Content Include="RepPage\CollectionPointPage.aspx" />
+    <Content Include="RepPage\RepHomePage.aspx" />
+    <Content Include="StationaryRetrievalList.aspx" />
+    <Content Include="WarehouseRetrievelList.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddClass\EmployeeMakeReq.cs" />
+    <Compile Include="AddClass\HodReqItem.cs" />
+    <Compile Include="AddClass\HodViewlist.cs" />
+    <Compile Include="business_logic.cs" />
+    <Compile Include="ClerkHome.aspx.cs">
+      <DependentUpon>ClerkHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClerkHome.aspx.designer.cs">
+      <DependentUpon>ClerkHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Clerk_Master.Master.cs">
+      <DependentUpon>Clerk_Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clerk_Master.Master.designer.cs">
+      <DependentUpon>Clerk_Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ClerkRequestDetails.aspx.cs">
+      <DependentUpon>ClerkRequestDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClerkRequestDetails.aspx.designer.cs">
+      <DependentUpon>ClerkRequestDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Disbursemtlist.aspx.cs">
+      <DependentUpon>Disbursemtlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Disbursemtlist.aspx.designer.cs">
+      <DependentUpon>Disbursemtlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeHome.aspx.cs">
+      <DependentUpon>EmployeeHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeHome.aspx.designer.cs">
+      <DependentUpon>EmployeeHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeePages\EmployeeEdit.aspx.cs">
+      <DependentUpon>EmployeeEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeePages\EmployeeEdit.aspx.designer.cs">
+      <DependentUpon>EmployeeEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeePages\EmployeeHome.aspx.cs">
+      <DependentUpon>EmployeeHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeePages\EmployeeHome.aspx.designer.cs">
+      <DependentUpon>EmployeeHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeePages\EmployeeView.aspx.cs">
+      <DependentUpon>EmployeeView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeePages\EmployeeView.aspx.designer.cs">
+      <DependentUpon>EmployeeView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeePages\MakeRequest.aspx.cs">
+      <DependentUpon>MakeRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeePages\MakeRequest.aspx.designer.cs">
+      <DependentUpon>MakeRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Master.Master.cs">
+      <DependentUpon>Employee_Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee_Master.Master.designer.cs">
+      <DependentUpon>Employee_Master.Master</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HodMasterPage.Master.cs">
+      <DependentUpon>HodMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HodMasterPage.Master.designer.cs">
+      <DependentUpon>HodMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="HodPage\HodChooseDelegate.aspx.cs">
+      <DependentUpon>HodChooseDelegate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HodPage\HodChooseDelegate.aspx.designer.cs">
+      <DependentUpon>HodChooseDelegate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HodPage\HodChooseRep.aspx.cs">
+      <DependentUpon>HodChooseRep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HodPage\HodChooseRep.aspx.designer.cs">
+      <DependentUpon>HodChooseRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HodPage\HodHomePage.aspx.cs">
+      <DependentUpon>HodHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HodPage\HodHomePage.aspx.designer.cs">
+      <DependentUpon>HodHomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HodPage\HodViewDetails.aspx.cs">
+      <DependentUpon>HodViewDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HodPage\HodViewDetails.aspx.designer.cs">
+      <DependentUpon>HodViewDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HodPage\HodViewPage.aspx.cs">
+      <DependentUpon>HodViewPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HodPage\HodViewPage.aspx.designer.cs">
+      <DependentUpon>HodViewPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Approver.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Disbursement_List.cs" />
+    <Compile Include="Models\Disbursement_List_dtl.cs" />
+    <Compile Include="Models\Dmg_Goods_Dtl.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Employee_Request.cs" />
+    <Compile Include="Models\Emp_Request_items.cs" />
+    <Compile Include="Models\GenerateReport1.cs" />
+    <Compile Include="Models\Goods_Received.cs" />
+    <Compile Include="Models\Inventory.cs" />
+    <Compile Include="Models\Inventory_purchase.cs" />
+    <Compile Include="Models\Invent_Pur_Dtl.cs" />
+    <Compile Include="Models\Logic_University_Model.cs" />
+    <Compile Include="Models\Store_Request.cs" />
+    <Compile Include="Models\Store_Request_items.cs" />
+    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\updatelistAndDamageList.cs" />
+    <Compile Include="Models\Voucher_details.cs" />
+    <Compile Include="Models\WarehouseRetrievelListJson.cs" />
+    <Compile Include="Models\Wrehse_Trans.cs" />
+    <Compile Include="Models\Wrehse_Trans_Dtl.cs" />
+    <Compile Include="newInventory.aspx.cs">
+      <DependentUpon>newInventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="newInventory.aspx.designer.cs">
+      <DependentUpon>newInventory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceviedRequestClerk.aspx.cs">
+      <DependentUpon>ReceviedRequestClerk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReceviedRequestClerk.aspx.designer.cs">
+      <DependentUpon>ReceviedRequestClerk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RepMasterPage.Master.cs">
+      <DependentUpon>RepMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RepMasterPage.Master.designer.cs">
+      <DependentUpon>RepMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="RepPage\BusinessLogic.cs" />
+    <Compile Include="RepPage\CollectionPointPage.aspx.cs">
+      <DependentUpon>CollectionPointPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RepPage\CollectionPointPage.aspx.designer.cs">
+      <DependentUpon>CollectionPointPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RepPage\RepHomePage.aspx.cs">
+      <DependentUpon>RepHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RepPage\RepHomePage.aspx.designer.cs">
+      <DependentUpon>RepHomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StationaryRetrievalList.aspx.cs">
+      <DependentUpon>StationaryRetrievalList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StationaryRetrievalList.aspx.designer.cs">
+      <DependentUpon>StationaryRetrievalList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WarehouseRetrievelList.aspx.cs">
+      <DependentUpon>WarehouseRetrievelList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WarehouseRetrievelList.aspx.designer.cs">
+      <DependentUpon>WarehouseRetrievelList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\fonts\ionicons.eot" />
+    <Content Include="assets\fonts\ionicons.ttf" />
+    <Content Include="assets\fonts\ionicons.woff" />
+    <Content Include="Clerk_Master.Master" />
+    <Content Include="Employee_Master.Master" />
+    <Content Include="HodMasterPage.Master" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile3.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile4.pubxml" />
+    <Content Include="RepMasterPage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -88,7 +356,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Models1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
