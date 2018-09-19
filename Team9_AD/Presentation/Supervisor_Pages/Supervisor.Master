@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Supervisor.master.cs" Inherits="Team9_AD.Supervisor" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Page</title>
+    <link rel="stylesheet" href="Clerk_assets/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+    <link rel="stylesheet" href="Clerk_assets/assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="Clerk_assets/assets/css/Simple-Vertical-Navigation-Menu-v-10.css">
+    <link rel="stylesheet" href="Clerk_assets/assets/css/styles.css">    
+        
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+       
+         <nav class="navbar navbar-light navbar-expand-md">
+        <div class="container-fluid"><a class="navbar-brand" href="#" style="font-family:Abel, sans-serif;font-size:40px;"><img src="Clerk_assets/assets/img/LOGO.jpg">LOGIC UNIVERSITY</a>
+            <button type="button"  class="navbar-toggler" data-toggle="collapse" aria-controls="#navcol-1" data-target="#navcol-1" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon" ></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="http://<%=Application["host"]%>/AD_Demo/SupervisorHome.aspx" style="font-size:20px;font-family:Abel, sans-serif;">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="http://<%=Application["host"]%>/AD_Demo/SupervisorReport.aspx" style="font-size:20px;font-family:Abel, sans-serif;">Report </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="http://<%=Application["host"]%>/AD_Demo/SupervisorVoucher.aspx" style="font-size:20px;font-family:Abel, sans-serif;">Voucher </a></li>
+                    <li class="nav-item" role="presentation" runat="server"><asp:Button runat="server"  class="nav-link active" Text="Log Out"  OnClick="LogOut_Click" /></li>
+                </ul>
+        </div>
+        </div>
+    </nav>        
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
+

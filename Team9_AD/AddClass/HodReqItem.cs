@@ -7,15 +7,17 @@ namespace Team9_AD.AddClass
 {
     public class HodReqItem
     {
-        public string Category { get; set; }
-        public string Description { get; set; }
+
+        public string Itemnumber { get; set; }
         public string Quantity { get; set; }
 
-        public HodReqItem(string category, string description, string quantity)
+      public string description { get; set; }
+
+        public HodReqItem(string itemnumber, string quantity, string description)
         {
-            Category = category;
-            Description = description;
+            Itemnumber = itemnumber;
             Quantity = quantity;
+            this.description = description;
         }
     }
 }
